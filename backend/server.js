@@ -32,11 +32,8 @@ express()
     .get("/api/get-flight/:flight", getFlight)
     .get("/api/get-reservations", getReservations)
     .get("/api/get-reservation/:reservation", getSingleReservation)
-
     .post("/api/add-reservation", addReservation)
-
     .patch("/api/update-reservation", updateReservation)
-
     .delete("/api/delete-reservation/:reservation", deleteReservation)
 
     // ---------------------------------
