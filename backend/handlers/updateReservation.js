@@ -23,7 +23,7 @@ const updateReservation = async (req, res) => {
 
     try {
         await client.connect();
-        const db = client.db("project_slingair");
+        const db = client.db("booking-SlingAir");
         console.log("Connected!");
 
         // Fetch the current reservation to get old seat and flight ID
@@ -42,17 +42,17 @@ const updateReservation = async (req, res) => {
             { $set: { "seats.$.isAvailable": true } }
         );
 
+        // Update the reservation with the new seat
+        const updateResult = await db.collection("reservations").updateOne(
+            { _id: reservationId },
+            { $set: { seat: newSeat } }
+        );
         // Reserve the new seat
         await db.collection("flights").updateOne(
             { _id: flightId, "seats.id": newSeat },
             { $set: { "seats.$.isAvailable": false } }
         );
 
-        // Update the reservation with the new seat
-        const updateResult = await db.collection("reservations").updateOne(
-            { _id: reservationId },
-            { $set: { seat: newSeat } }
-        );
 
         res.status(200).json({
             status: 200,
