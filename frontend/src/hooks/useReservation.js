@@ -4,6 +4,7 @@ import { getReservation } from "../service/api";
 
 const useReservation = () => {
   const reservationId = window.localStorage.getItem("reservationId");
+  console.log('Retrieved reservationId from localStorage:', reservationId);
   const [reservation, setReservation] = useState({});
 
   useEffect(() => {

@@ -1,7 +1,5 @@
-const flights = [{
-    _id: "SA231",
-    flight: "SA231",
-    seats: [
+const flights = {
+    SA231: [
         { id: "1A", isAvailable: true },
         { id: "1B", isAvailable: true },
         { id: "1C", isAvailable: true },
@@ -62,11 +60,9 @@ const flights = [{
         { id: "10D", isAvailable: true },
         { id: "10E", isAvailable: true },
         { id: "10F", isAvailable: true },
-    ]},
-    { 
-    _id: "FD489",
-    flight : "FD489",
-     seats: [
+    ],
+     
+    FD489:[
         { id: "1A", isAvailable: true },
         { id: "1B", isAvailable: true },
         { id: "1C", isAvailable: true },
@@ -127,8 +123,8 @@ const flights = [{
         { id: "10D", isAvailable: true },
         { id: "10E", isAvailable: true },
         { id: "10F", isAvailable: true },
-    ]},
-];
+    ],
+};
 
 const reservations = [
     {

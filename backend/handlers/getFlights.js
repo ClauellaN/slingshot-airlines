@@ -13,7 +13,7 @@ const getFlights = async (req, res) => {
     const client = new MongoClient(MONGO_URI, options);
     try {
         await client.connect();
-        const db = client.db('slingAir');
+        const db = client.db('booking-SlingAir');
         console.log('Connected to MongoDB!');
 
         // retrieving all flight numbers using distinct method
