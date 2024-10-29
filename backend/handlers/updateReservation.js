@@ -53,7 +53,6 @@ const updateReservation = async (req, res) => {
             { $set: { "seats.$.isAvailable": false } }
         );
 
-
         res.status(200).json({
             status: 200,
             message: "Reservation updated successfully!",
