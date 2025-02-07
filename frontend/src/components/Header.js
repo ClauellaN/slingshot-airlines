@@ -12,7 +12,7 @@ const Header = ({ handleChange, reservationId }) => {
     const [flightNumbers, setFlightNumbers] = useState([]);
 
     useEffect(() => {
-        // DONE: GET all flight numbers
+        // DONE: GET all flight numbersWhat
         (async () => {
             const res = await makeFetchRequest(getFlightNumbers);
             setFlightNumbers(res.data);
